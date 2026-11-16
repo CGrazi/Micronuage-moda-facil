@@ -1,0 +1,24 @@
+{
+  "roles": [
+    {"id": "admin", "label": "Administrador"},
+    {"id": "funcionario", "label": "Funcionário"}
+  ],
+  "auth": {"signup": "open", "default_role": "funcionario"},
+  "collections": [
+    {
+      "id": "produtos",
+      "label": "Produtos",
+      "label_singular": "Produto",
+      "title_field": "nome",
+      "fields": [
+        {"id": "nome", "label": "Nome", "type": "text", "required": true},
+        {"id": "categoria", "label": "Categoria", "type": "select", "options": ["Camisetas", "Calças", "Vestidos", "Casacos", "Calçados", "Acessórios", "Outros"], "required": true},
+        {"id": "quantidade", "label": "Quantidade", "type": "integer", "required": true},
+        {"id": "preco", "label": "Preço", "type": "money", "required": true}
+      ],
+      "permissions": {
+        "funcionario": {"read": "all", "create": true, "update": "all", "delete": "none"}
+      }
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+/* The site's colours, fonts and corners — change them here and the whole site follows. */
+@theme {
+  --color-primary: #c2410c;
+  --color-accent: #fdba74;
+  --color-background: #fbf9f6;
+  --color-foreground: #26190f;
+  --color-muted: color-mix(in oklab, var(--color-foreground) 5%, var(--color-background));
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --radius-site: 1.25rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* The app screens (src/components/workspace) read these — they follow the theme above. */
+:root {
+  --rc-bg: var(--color-background);
+  --rc-fg: var(--color-foreground);
+  --rc-primary: var(--color-primary);
+  --rc-accent: var(--color-accent);
+  --rc-radius: var(--radius-site);
+  --rc-heading-font: var(--font-heading);
+  --rc-body-font: var(--font-sans);
+}
